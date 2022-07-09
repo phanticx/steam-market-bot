@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.seleniumhq.selenium:selenium-java:4.2.1'
+    implementation 'com.konghq:unirest-java:4.0.0-RC2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+    implementation 'net.dv8tion:JDA:5.0.0-alpha.3'
+}
+
+test {
+    useJUnitPlatform()
+}
