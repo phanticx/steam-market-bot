@@ -2,23 +2,23 @@ import java.text.NumberFormat;
 import static java.lang.Double.parseDouble;
 
 public class ItemData {
-    private String name;
+    private final String name;
     public double itemFloat;
-    private double price;
-    private String itemWear;
-    private NumberFormat formatter = NumberFormat.getCurrencyInstance();
+    private final double price;
+    private final String itemWear;
+    private final NumberFormat formatter = NumberFormat.getCurrencyInstance();
 
     public ItemData(String name, String itemFloat, String price) {
         this.formatter.setMinimumIntegerDigits(1);
         this.name = name;
-        if (itemFloat.indexOf("Unable to determine float") != -1) {
+        if (itemFloat.contains("Unable to determine float")) {
             this.itemFloat = 1;
         } else {
             this.itemFloat = parseDouble(itemFloat);
         }
         this.price = parseDouble(price.substring(1));
         if (this.itemFloat < 0.07) {
-            this.itemWear = "(Fractory New)";
+            this.itemWear = "(Factory New)";
         } else if (this.itemFloat < 0.15) {
             this.itemWear = "(Minimal Wear)";
         } else if (this.itemFloat < 0.38) {

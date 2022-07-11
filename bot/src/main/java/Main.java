@@ -11,7 +11,7 @@ public class Main {
     public static String prefix = "!";
 
     public static void main(String[] args) throws LoginException {
-        String token = "OTI5MTUxMjY5MzY3NTc4NjI1.YdjJjQ.B-tvMt5SQc8z3j8ZZy40VPw_gts";
+        String token = "OTI5MTUxMjY5MzY3NTc4NjI1.GZS3sr.vl94X3jpGD5QxPKeM7zlccU23xcQmhK0yNQL44";
         jda = JDABuilder.createDefault(token).build();
         jda.getPresence().setStatus(OnlineStatus.ONLINE);
         jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.listening("your lovely voice!"));
